@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="pt" data-theme="light">
+<head>
+    <!-- Definir ícone da aba do navegador -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Definir codificação de caracteres -->
+    <meta charset="utf-8" />
+
+    <!-- Definir responsividade do layout -->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Definir título da página -->
+    <title>Início</title>
+
+    <!-- Importar biblioteca CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Importar fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Importar arquivo de estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Importar arquivo principal de script (carregado no head para inicializar recursos que não dependem do DOM completo) -->
+    <script src="script.js"></script>
+</head>
+<body>
+
+  <!-- Criar barra de navegação fixa no topo do site -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+
+      <!-- Criar atalho para retornar ao início -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <!-- Exibir logotipo -->
+        <img src="logo.png" alt="Logo" class="logo me-2" />
+        <!-- Exibir nome da marca com suporte a tradução -->
+        <span data-i18n="brand">Boltides</span>
+      </a>
+
+      <!-- Criar botão de menu para telas pequenas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Criar área de links da navegação -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          <!-- Criar links principais do site com suporte a tradução -->
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="clients.html" data-i18n="nav.clients">Clientes</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html" data-i18n="nav.services">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.about">Sobre</a></li>
+
+          <!-- Criar botão para abrir modal de contato -->
+          <li class="nav-item">
+            <button class="btn btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#contactModal" data-i18n="nav.contact">Contato</button>
+          </li>
+
+          <!-- Criar botão de alternância de modo escuro -->
+          <li class="nav-item ms-3 d-flex align-items-center">
+            <button id="darkToggle" class="btn btn-icon" title="Dark mode">🌙</button>
+          </li>
+
+          <!-- Criar seletor de idiomas -->
+          <li class="nav-item ms-2">
+            <select id="langSelect" class="form-select form-select-sm">
+              <option value="pt">PT</option>
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+            </select>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Criar seção inicial (hero) com chamada principal -->
+  <header class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Criar textos principais -->
+        <div class="col-md-6">
+          <h1 class="display-5 fw-bold" data-i18n="hero.title">Soluções digitais que transformam ideias em resultados.</h1>
+          <p class="lead" data-i18n="hero.subtitle">Sites modernos, rápidos e responsivos, prontos para o seu negócio crescer.</p>
+
+          <!-- Criar botões de ação -->
+          <div class="mt-4">
+            <a href="services.html" class="btn btn-primary me-2" data-i18n="hero.cta">Ver serviços</a>
+            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#contactModal" data-i18n="hero.contact">Fale conosco</button>
+          </div>
+        </div>
+
+        <!-- Exibir imagem ilustrativa -->
+        <div class="col-md-6 text-center">
+          <img src="ilus.png" alt="Ilustração" class="img-fluid" />
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Criar carrossel de destaques -->
+  <section class="container my-5">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Criar indicadores do carrossel -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- Criar área interna com as imagens -->
+      <div class="carousel-inner rounded shadow-sm">
+
+        <!-- Criar slide principal -->
+        <div class="carousel-item active">
+          <img src="slide1.png" class="d-block w-100" alt="Slide 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 data-i18n="carousel.title1">Design centrado no usuário</h5>
+            <p data-i18n="carousel.desc1">Experiência que converte visitantes em clientes.</p>
+          </div>
+        </div>
+
+        <!-- Criar slide 2 -->
+        <div class="carousel-item">
+          <img src="slide2.png" class="d-block w-100" alt="Slide 2">
+        </div>
+
+        <!-- Criar slide 3 -->
+        <div class="carousel-item">
+          <img src="slide3.png" class="d-block w-100" alt="Slide 3">
+        </div>
+
+      </div>
+
+      <!-- Criar controles laterais do carrossel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- Criar seção de cartões de serviços -->
+  <section class="container my-5">
+    <h2 class="mb-4" data-i18n="home.showcaseTitle">Nossos serviços</h2>
+    <div class="row g-4">
+
+                 <!-- Serviço Websites -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="web.png" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title" data-i18n="service.webTitle">Websites Profissionais</h5>
+                        <p class="card-text" data-i18n="service.webDesc1">Criamos sites sob medida.</p>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#webServiceModal" data-i18n="service.learn">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Websites -->
+            <div class="modal fade" id="webServiceModal" tabindex="-1" aria-labelledby="webServiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="webServiceModalLabel">Websites Profissionais</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>🇧🇷</p>
+                            <p><strong>Descrição:</strong> Criamos sites sob medida para atender às suas necessidades. Desde o design responsivo até a integração com ferramentas de SEO, garantimos que seu site tenha um ótimo desempenho e seja fácil de navegar.</p>
+                            <p><strong>Recursos:</strong></p>
+                            <ul>
+                                <li>Design Responsivo</li>
+                                <li>SEO Básico Integrado</li>
+                                <li>Otimização de Performance</li>
+                                <li>Suporte Pós-lançamento</li>
+                            </ul>
+                            <br>
+                            <br>
+                            <p>🇺🇸</p>
+                            <p><strong>Description:</strong> We create custom websites tailored to your needs. From responsive design to SEO tool integration, we ensure your website performs excellently and is easy to navigate.</p>
+                            <p><strong>Features:</strong></p>
+                            <ul>
+                                <li>Responsive Design</li>
+                                <li>Basic Integrated SEO</li>
+                                <li>Performance Optimization</li>
+                                <li>Post-launch Support</li>
+                            </ul>
+                            <br>
+                            <br>
+                            <p>🇫🇷</p>
+                            <p><strong>Description :</strong> Nous créons des sites personnalisés adaptés à vos besoins. Du design responsive à l’intégration d’outils SEO, nous garantissons d’excellentes performances et une navigation fluide pour votre site.</p>
+                            <p><strong>Ressources :</strong></p>
+                              <ul>
+                                  <li>Design Responsive</li>
+                                  <li>SEO Basique Intégré</li>
+                                  <li>Optimisation des Performances</li>
+                                  <li>Support Après Lancement</li>
+                              </ul>
+                        </div>
+                        <div class="modal-footer">
+                                      <button class="btn btn-primary" data-bs-dismiss="modal" data-i18n="service.contact">
+            Quero contratar
+          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Serviço UI -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="brand.png" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title" data-i18n="service.uiTitle">Design de UI</h5>
+                        <p class="card-text" data-i18n="service.webDesc2">Criamos interfaces de usuário atraentes e funcionais.</p>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uiServiceModal" data-i18n="service.learn">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal UI -->
+            <div class="modal fade" id="uiServiceModal" tabindex="-1" aria-labelledby="uiServiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="uiServiceModalLabel">Design de UI</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+<div class="modal-body">
+    <p>🇧🇷</p>
+    <p><strong>Descrição:</strong> Criamos interfaces de usuário (UI) que são intuitivas, atraentes e funcionais. Nosso objetivo é garantir que os usuários tenham uma experiência agradável ao interagir com seu produto digital.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Design Limpo e Moderno</li>
+        <li>Foco na Usabilidade</li>
+        <li>Prototipagem Rápida</li>
+        <li>Integração com a Experiência do Usuário</li>
+    </ul>
+
+    <br>
+    <br>
+
+    <p>🇺🇸</p>
+    <p><strong>Description:</strong> We create user interfaces (UI) that are intuitive, attractive, and functional. Our goal is to ensure that users have a pleasant experience while interacting with your digital product.</p>
+    <p><strong>Features:</strong></p>
+    <ul>
+        <li>Clean and Modern Design</li>
+        <li>Focus on Usability</li>
+        <li>Rapid Prototyping</li>
+        <li>Integration with User Experience</li>
+    </ul>
+
+    <br>
+    <br>
+
+    <p>🇫🇷</p>
+    <p><strong>Description :</strong> Nous créons des interfaces utilisateur (UI) intuitives, attrayantes et fonctionnelles. Notre objectif est de garantir une expérience agréable aux utilisateurs lorsqu’ils interagissent avec votre produit numérique.</p>
+    <p><strong>Ressources :</strong></p>
+    <ul>
+        <li>Design Propre et Moderne</li>
+        <li>Focus sur l’Utilisabilité</li>
+        <li>Prototypage Rapide</li>
+        <li>Intégration avec l’Expérience Utilisateur</li>
+    </ul>
+</div>
+                        <div class="modal-footer">
+                                      <button class="btn btn-primary" data-bs-dismiss="modal" data-i18n="service.contact">
+            Quero contratar
+          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Serviço Banco de Dados -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="bd.png" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title" data-i18n="service.dbTitle">Gestão de Bancos</h5>
+                        <p class="card-text" data-i18n="service.webDesc3">Gerenciamos bancos de dados eficientes e escaláveis.</p>
+                        <div class="mt-auto">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dbServiceModal" data-i18n="service.learn">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Banco de Dados -->
+            <div class="modal fade" id="dbServiceModal" tabindex="-1" aria-labelledby="dbServiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+<div class="modal-header">
+    <h5 class="modal-title" id="dbServiceModalLabel">Gestão de Bancos de Dados</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <p>🇧🇷</p>
+    <p><strong>Descrição:</strong> Oferecemos serviços de gestão de bancos de dados, garantindo performance, segurança e escalabilidade para sua aplicação. De soluções relacionais a NoSQL, temos a expertise necessária para atender suas necessidades.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Otimização de Consultas</li>
+        <li>Segurança Avançada</li>
+        <li>Backup e Recuperação de Dados</li>
+        <li>Escalabilidade</li>
+    </ul>
+
+    <br>
+    <br>
+
+    <p>🇺🇸</p>
+    <p><strong>Description:</strong> We offer database management services, ensuring performance, security, and scalability for your application. From relational to NoSQL solutions, we have the expertise needed to meet your requirements.</p>
+    <p><strong>Features:</strong></p>
+    <ul>
+        <li>Query Optimization</li>
+        <li>Advanced Security</li>
+        <li>Data Backup and Recovery</li>
+        <li>Scalability</li>
+    </ul>
+
+    <br>
+    <br>
+
+    <p>🇫🇷</p>
+    <p><strong>Description :</strong> Nous proposons des services de gestion de bases de données, garantissant performance, sécurité et évolutivité pour votre application. Des solutions relationnelles au NoSQL, nous avons l’expertise nécessaire pour répondre à vos besoins.</p>
+    <p><strong>Ressources :</strong></p>
+    <ul>
+        <li>Optimisation des Requêtes</li>
+        <li>Sécurité Avancée</li>
+        <li>Sauvegarde et Récupération des Données</li>
+        <li>Évolutivité</li>
+    </ul>
+</div>
+
+                        <div class="modal-footer">
+                                      <button class="btn btn-primary" data-bs-dismiss="modal" data-i18n="service.contact">
+            Quero contratar
+          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+  </section>
+
+
+  <!-- Criar seção de vídeo explicativo -->
+  <section class="container my-5">
+    <div class="row align-items-center">
+
+      <div class="col-md-6">
+        <h3 data-i18n="home.videoTitle">Conheça Mais</h3>
+        <p data-i18n="home.videoDesc">Um rápido tour por uma produção autoral.</p>
+      </div>
+
+      <div class="col-md-6">
+        <div class="ratio ratio-16x9">
+          <video controls src="video.mp4" poster="thumn.png">Seu navegador não suporta vídeo.</video>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Criar seção de FAQ com acordeão -->
+  <section class="container my-5">
+    <h3 class="mb-3" data-i18n="home.faqTitle">Perguntas frequentes</h3>
+
+    <div class="accordion" id="faqAccordion">
+
+      <!-- Criar primeira pergunta -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            <span data-i18n="faq.q1">Quanto tempo para criar um site?</span>
+          </button>
+        </h2>
+
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body" data-i18n="faq.a1">Depende do escopo, normalmente 2–6 semanas.</div>
+        </div>
+      </div>
+
+      <!-- Criar segunda pergunta -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            <span data-i18n="faq.q2">Oferecem suporte pós-lançamento?</span>
+          </button>
+        </h2>
+
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body" data-i18n="faq.a2">Sim, oferecemos planos mensais de manutenção.</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Criar seção do jogo Breakout -->
+  <section class="container my-5">
+    <p data-i18n="game.desc">Divirta-se por alguns minutos! :D</p>
+
+    <div class="game-wrap shadow-sm">
+      <canvas id="breakoutCanvas" width="800" height="400"></canvas>
+
+      <!-- Criar controles do jogo -->
+      <div class="game-controls mt-2 d-flex justify-content-between">
+        <div><span data-i18n="game.score">Pontuação:</span> <span id="gameScore">0</span></div>
+
+        <div>
+          <button id="gameRestart" class="btn btn-sm btn-outline-secondary" data-i18n="game.restart">
+            Reiniciar
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Criar rodapé do site -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+      <div>
+        © <span id="year"></span>
+        <span data-i18n="brand">Boltides Technology®</span> |
+        <small data-i18n="footer.rights">Todos os direitos reservados.</small>
+      </div>
+
+      <div class="d-flex gap-3">
+        <a href="https://x.com/boltides?s=21" class="text-white" aria-label="twitter">Twitter</a>
+        <a href="https://www.instagram.com/boltidestechnology/" class="text-white" aria-label="instagram">Instagram</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Criar modal de detalhes de serviços -->
+  <div class="modal fade" id="serviceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="serviceModalTitle">Serviço</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Criar espaço onde o JavaScript irá inserir conteúdo -->
+        <div class="modal-body" id="serviceModalBody"></div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-dismiss="modal" data-i18n="service.contact">
+            Quero contratar
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Criar modal de contato -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+      <!-- Criar formulário com validação -->
+      <form id="contactForm" class="modal-content needs-validation" novalidate>
+
+        <div class="modal-header">
+          <h5 class="modal-title" data-i18n="contact.title">Entre em contato</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <!-- Criar campo de nome -->
+          <div class="mb-3">
+            <label class="form-label" for="name" data-i18n="contact.name">Nome</label>
+            <input id="name" name="name" class="form-control" required />
+            <div class="invalid-feedback" data-i18n="contact.nameReq">Informe seu nome.</div>
+          </div>
+
+          <!-- Criar campo de email -->
+          <div class="mb-3">
+            <label class="form-label" for="email" data-i18n="contact.email">Email</label>
+            <input id="email" name="email" type="email" class="form-control" required />
+            <div class="invalid-feedback" data-i18n="contact.emailReq">Email válido é obrigatório.</div>
+          </div>
+
+          <!-- Criar campo de telefone -->
+          <div class="mb-3">
+            <label class="form-label" for="phone" data-i18n="contact.phone">Telefone</label>
+            <input id="phone" name="phone" class="form-control" required />
+            <div class="invalid-feedback" data-i18n="contact.phoneReq">Informe telefone.</div>
+          </div>
+
+          <!-- Criar campo de mensagem -->
+          <div class="mb-3">
+            <label class="form-label" for="message" data-i18n="contact.message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+            <div class="invalid-feedback" data-i18n="contact.messageReq">Digite sua mensagem.</div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="contact.cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.send">Enviar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Importar biblioteca JS do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Importar script principal do site (versão local específica desta página) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

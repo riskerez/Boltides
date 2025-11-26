@@ -1,0 +1,212 @@
+:root{
+  --bg: #ffffff;
+  --text: #222;
+  --muted: #6c757d;
+  --primary: rgba(100, 6, 109, 0.9);
+  --card: #fff;
+}
+
+[data-theme="dark"]{
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --muted: #b5b5b5;
+  --card: #121418;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition: background .25s ease, color .25s ease;
+}
+
+/* Navbar styling */
+.navbar-brand .logo{ width:40px; height:40px; object-fit:contain; }
+.navbar .btn-icon{ background:transparent; border:none; font-size:1.05rem; padding:.25rem; }
+
+/* Hero */
+.hero{ background:linear-gradient(180deg, rgba(91,60,196,0.06), transparent); }
+
+/* Cards & hover */
+.card{ border: none; border-radius: 12px; background: var(--card); transition: transform .18s ease, box-shadow .18s ease;}
+.card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(5,10,30,0.08);}
+
+/* Buttons */
+.btn-primary{ background:var(--primary); border-color:var(--primary); }
+.btn-outline-primary{ border-color:var(--primary); color:var(--primary); }
+
+/* Client logos */
+.client-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Team photo */
+.team-photo{ width:100px; height:100px; object-fit:cover; }
+
+/* Game area */
+.game-wrap{
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
+  padding: 12px;
+  border-radius: 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+#breakoutCanvas{ display:block; max-width:100%; width:100%; height:auto; background:#000; border-radius:8px; }
+
+/* Footer */
+footer{ background:linear-gradient(90deg, #0b0b0b, #111); }
+
+/* small responsive niceties */
+@media(max-width:767px){
+  .hero .display-5{ font-size:1.6rem; }
+}
+
+/* ---------------------------
+   Dark-theme tweaks for UI
+   (keeps look visually consistent but
+    ensures Bootstrap elements are readable)
+   --------------------------- */
+[data-theme="dark"] body{
+  background: var(--bg);
+  color: var(--text);
+}
+
+[data-theme="dark"] .navbar{
+  background: transparent !important;
+}
+[data-theme="dark"] .navbar .navbar-brand span,
+[data-theme="dark"] .navbar .nav-link,
+[data-theme="dark"] .navbar .btn,
+[data-theme="dark"] .navbar .form-select {
+  color: var(--text) !important;
+}
+
+/* ensure navbar buttons and toggler are visible in dark mode */
+[data-theme="dark"] .navbar-light .navbar-toggler-icon{
+  filter: invert(1) grayscale(1) brightness(1.6);
+}
+
+/* dropdowns and navbar collapsed background */
+[data-theme="dark"] .navbar .collapse {
+  background: rgba(18,20,24,0.85);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+/* make cards darker in dark mode */
+[data-theme="dark"] .card{
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* modal adjustments */
+[data-theme="dark"] .modal-content{
+  background: var(--card);
+  color: var(--text);
+}
+
+/* buttons readability in dark */
+[data-theme="dark"] .btn-outline-primary{
+  border-color: rgba(100, 6, 109, 0.9);
+  color: rgba(100, 6, 109, 0.9);
+}
+
+/* carousel caption readability */
+[data-theme="dark"] .carousel-caption { color: var(--text); text-shadow: none; }
+
+.btn-primary {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: rgba(100, 6, 109, 1) !important; /* roxo sólido */
+  border-color: rgba(100, 6, 109, 1) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background: rgba(100, 6, 109, 1) !important;
+  border-color: rgba(100, 6, 109, 1) !important;
+  color: #fff !important;
+}
+
+/* SELECT (idioma) - usa variáveis do tema */
+.form-select {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--muted) !important;
+}
+
+.form-select:focus {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.20rem rgba(100, 6, 109, 0.25) !important;
+}
+
+/* Ícone da setinha */
+.form-select option {
+  background-color: var(--card);
+  color: var(--text);
+}
+
+/* Accordion base */
+.accordion-item {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.accordion-button {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--card) !important;
+  color: var(--primary) !important; /* opcional: deixa o título roxinho */
+  box-shadow: none !important;
+}
+
+.accordion-button:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(100, 6, 109, 0.25) !important;
+}
+
+.accordion-body {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+}
+
+[data-theme="dark"] .navbar .form-select {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border-color: var(--muted) !important;
+}
+
+/* Forçar legibilidade no dark mode */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] small,
+[data-theme="dark"] .text-muted {
+  color: var(--text) !important;
+}

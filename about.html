@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt" data-theme="light">
+<head>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sobre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.png" alt="Logo" class="logo me-2" />
+                <span data-i18n="brand">Boltides</span>
+                </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clients.html" data-i18n="nav.clients">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html" data-i18n="nav.services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.about">Sobre</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#contactModal" data-i18n="nav.contact">Contato</button>
+                        </li>
+
+                    <li class="nav-item ms-3 d-flex align-items-center">
+                        <button id="darkToggle" class="btn btn-icon" title="Dark mode">🌙</button>
+                        </li>
+                    <li class="nav-item ms-2">
+                        <select id="langSelect" class="form-select form-select-sm">
+                            <option value="pt">PT</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                            </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container my-5">
+        <h1 data-i18n="about.title">Sobre a Empresa</h1>
+        <p data-i18n="about.mission">Nossa missão e história.</p>
+        <section class="mt-4">
+<h3 data-i18n="about.teamTitle">Equipe</h3>
+<div class="row g-3 mt-3">
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <img src="Isabela.png" alt="Membro" class="team-photo rounded-circle mb-2">
+            <h6 class="mb-0">Isabela</h6>
+            <small class="text-muted d-block" data-i18n="about.role">Função: CEO</small>
+            <p class="small mt-2">
+                <strong>🇧🇷</strong><br>
+                Administra a empresa, toma decisões estratégicas, lidera a equipe, realiza negociações, define metas, monitora o desempenho financeiro, representa a empresa em eventos e aprova orçamentos.
+                <br><br>
+                <strong>🇺🇸</strong><br>
+                Manages the company, makes strategic decisions, leads the team, conducts negotiations, sets goals, monitors financial performance, represents the company at events, and approves budgets.
+                <br><br>
+                <strong>🇫🇷</strong><br>
+                Gère l'entreprise, prend des décisions stratégiques, dirige l'équipe, mène des négociations, fixe des objectifs, surveille la performance financière, représente l'entreprise lors d'événements et approuve les budgets.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <img src="Marita.png" alt="Membro" class="team-photo rounded-circle mb-2">
+            <h6 class="mb-0">Maria Rita</h6>
+            <small class="text-muted d-block" data-i18n="about.role1">Função: Co-Founder</small>
+            <p class="small mt-2">
+                <strong>🇧🇷</strong><br>
+                Co-funda a empresa, toma decisões estratégicas, lidera a equipe, realiza negociações, define metas, monitora o desempenho financeiro, representa a empresa em eventos e aprova orçamentos.
+                <br><br>
+                <strong>🇺🇸</strong><br>
+                Co-founds the company, makes strategic decisions, leads the team, conducts negotiations, sets goals, monitors financial performance, represents the company at events, and approves budgets.
+                <br><br>
+                <strong>🇫🇷</strong><br>
+                Co-fonde l'entreprise, prend des décisions stratégiques, dirige l'équipe, mène des négociations, fixe des objectifs, surveille la performance financière, représente l'entreprise lors d'événements et approuve les budgets.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <img src="Nathaniel.png" alt="Membro" class="team-photo rounded-circle mb-2">
+            <h6 class="mb-0">Nathaniel</h6>
+            <small class="text-muted d-block" data-i18n="about.role2">Função: Manager</small>
+            <p class="small mt-2">
+                <strong>🇧🇷</strong><br>
+                Gerencia a equipe, organiza tarefas, define metas diárias, supervisiona o desempenho, garante a execução dos projetos, realiza feedbacks, coordena atividades, resolve problemas e mantém a comunicação entre os departamentos.
+                <br><br>
+                <strong>🇺🇸</strong><br>
+                Manages the team, organizes tasks, sets daily goals, supervises performance, ensures project execution, provides feedback, coordinates activities, solves problems, and maintains communication between departments.
+                <br><br>
+                <strong>🇫🇷</strong><br>
+                Gère l'équipe, organise les tâches, définit les objectifs quotidiens, supervise la performance, assure l'exécution des projets, fournit des retours, coordonne les activités, résout les problèmes et maintient la communication entre les départements.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mt-3">
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <img src="Miguel.png" alt="Membro" class="team-photo rounded-circle mb-2">
+            <h6 class="mb-0">Miguel</h6>
+            <small class="text-muted d-block" data-i18n="about.role3">Função: Dev/Designer</small>
+            <p class="small mt-2">
+                <strong>🇧🇷</strong><br>
+                Desenvolve e cria soluções digitais, escreve código, testa funcionalidades, projeta interfaces, implementa melhorias, resolve problemas técnicos, colabora com a equipe, ajusta layouts e garante a experiência do usuário.
+                <br><br>
+                <strong>🇺🇸</strong><br>
+                Develops and creates digital solutions, writes code, tests functionalities, designs interfaces, implements improvements, solves technical problems, collaborates with the team, adjusts layouts, and ensures user experience.
+                <br><br>
+                <strong>🇫🇷</strong><br>
+                Développe et crée des solutions numériques, écrit du code, teste les fonctionnalités, conçoit des interfaces, met en œuvre des améliorations, résout des problèmes techniques, collabore avec l'équipe, ajuste les mises en page et garantit l'expérience utilisateur.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <img src="Heloísa.png" alt="Membro" class="team-photo rounded-circle mb-2">
+            <h6 class="mb-0">Heloísa</h6>
+            <small class="text-muted d-block" data-i18n="about.role2">Função: Analista</small>
+            <p class="small mt-2">
+                <strong>🇧🇷</strong><br>
+                Analisa dados, gera relatórios, identifica padrões e tendências, apoia a tomada de decisões, monitora processos, realiza pesquisas, avalia desempenho e sugere melhorias para otimizar resultados.
+                <br><br>
+                <strong>🇺🇸</strong><br>
+                Analyzes data, generates reports, identifies patterns and trends, supports decision-making, monitors processes, conducts research, evaluates performance, and suggests improvements to optimize results.
+                <br><br>
+                <strong>🇫🇷</strong><br>
+                Analyse les données, génère des rapports, identifie les modèles et tendances, soutient la prise de décisions, surveille les processus, effectue des recherches, évalue la performance et suggère des améliorations pour optimiser les résultats.
+            </p>
+        </div>
+    </div>
+</div>
+
+        </section>
+
+        <section class="mt-4">
+            <h3 data-i18n="about.full">Informações completas</h3>
+            <p data-i18n="about.aa"></p>
+            </section>
+    </main>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form id="contactForm" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="contact.title">Entre em contato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="name" data-i18n="contact.name">Nome</label>
+                        <input id="name" name="name" class="form-control" required />
+                        <div class="invalid-feedback" data-i18n="contact.nameReq">Informe seu nome.</div>
+                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email" data-i18n="contact.email">Email</label>
+                        <input id="email" name="email" type="email" class="form-control" required />
+                        <div class="invalid-feedback" data-i18n="contact.emailReq">Email válido é obrigatório.</div>
+                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="phone" data-i18n="contact.phone">Telefone</label>
+                        <input id="phone" name="phone" class="form-control" required />
+                        <div class="invalid-feedback" data-i18n="contact.phoneReq">Informe telefone.</div>
+                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="message" data-i18n="contact.message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+                        <div class="invalid-feedback" data-i18n="contact.messageReq">Digite sua mensagem.</div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="contact.cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.send">Enviar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+      <div>
+        © <span id="year"></span>
+        <span data-i18n="brand">Boltides Technology®</span> |
+        <small data-i18n="footer.rights">Todos os direitos reservados.</small>
+      </div>
+
+      <div class="d-flex gap-3">
+        <a href="https://x.com/boltides?s=21" class="text-white" aria-label="twitter">Twitter</a>
+        <a href="https://www.instagram.com/boltidestechnology/" class="text-white" aria-label="instagram">Instagram</a>
+      </div>
+
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
